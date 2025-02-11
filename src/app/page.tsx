@@ -1,7 +1,40 @@
+"use client";
+
 import Image from "next/image";
 import theme from "@/theme/colors";
+import{ FloatingDock } from "../../components/ui/floating-dock";
+import { FaGlobe, FaPlane, FaSuitcase, FaHotel } from 'react-icons/fa';
 
 export default function Home() {
+
+
+  const yourItems = [
+    {
+      id: 1,
+      icon: <FaGlobe />,  // Globe icon
+      title: "Home",
+      link: "/home",
+    },
+    {
+      id: 2,
+      icon: <FaPlane />,  // Plane icon
+      title: "Search",
+      link: "/search",
+    },
+    {
+      id: 3,
+      icon: <FaSuitcase />,  // Suitcase icon
+      title: "Notifications",
+      link: "/notifications",
+    },
+    {
+      id: 4,
+      icon: <FaHotel />,  // Hotel icon
+      title: "Settings",
+      link: "/settings",
+    },
+  ];
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6">
       {/* Logo */}
@@ -27,6 +60,11 @@ export default function Home() {
       >
         Explore Packages
       </button>
+      <FloatingDock
+      items={yourItems}
+      desktopClassName="yourDesktopClassName"
+      mobileClassName="yourMobileClassName"
+    />
     </main>
   );
 }
