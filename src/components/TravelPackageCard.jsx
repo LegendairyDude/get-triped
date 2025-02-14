@@ -1,24 +1,25 @@
 "use client";
-
 import Image from "next/image";
 
 export function TravelPackageCard({ packageData }) {
-  // Destructure package details from props
   const { title, imageUrl, description, price, rating } = packageData;
 
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
+    <div className="w-80 h-96 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 flex flex-col">
+      {/* Fixed image area */}
       <div className="relative h-48 w-full">
         <Image src={imageUrl} alt={title} fill className="object-cover" />
       </div>
-      <div className="px-4 py-3">
+      {/* Content area takes remaining space */}
+      <div className="px-4 py-3 flex flex-col flex-1">
         <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
           {title}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+        {/* Limit description to three lines */}
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
           {description}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between">
           <span className="text-2xl font-semibold text-primary">${price}</span>
           <div className="flex items-center">
             {Array.from({ length: 5 }).map((_, i) => (
