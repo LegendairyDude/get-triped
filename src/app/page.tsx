@@ -1,70 +1,71 @@
+// src/app/page.jsx
 "use client";
 
-import Image from "next/image";
-import theme from "@/theme/colors";
-import{ FloatingDock } from "../../components/ui/floating-dock";
-import { FaGlobe, FaPlane, FaSuitcase, FaHotel } from 'react-icons/fa';
+import { Header } from "@/components/Header";
+import { TravelPackageCard } from "@/components/TravelPackageCard";
+import { HoverBorderGradient } from "@/components/hover-border-gradient";
+import { FloatingDock } from "@/components/floating-dock";
+import { Footer } from "@/components/Footer";
+import { resorts } from "@/data/resorts"; // Your 12 resort objects
+import {
+  IconMap2,
+  IconBeach,
+  IconLuggage,
+  IconBuildingAirport,
+} from "@tabler/icons-react";
 
 export default function Home() {
-
-
+  // Navigation items for the Floating Dock
   const yourItems = [
     {
       id: 1,
-      icon: <FaGlobe />,  // Globe icon
-      title: "Home",
-      link: "/home",
+      icon: <IconMap2 className="h-6 w-6" />,
+      title: "Destinations",
+      href: "/destinations",
     },
     {
       id: 2,
-      icon: <FaPlane />,  // Plane icon
-      title: "Search",
-      link: "/search",
+      icon: <IconBeach className="h-6 w-6" />,
+      title: "Resorts",
+      href: "/resorts",
     },
     {
       id: 3,
-      icon: <FaSuitcase />,  // Suitcase icon
-      title: "Notifications",
-      link: "/notifications",
+      icon: <IconLuggage className="h-6 w-6" />,
+      title: "Packing",
+      href: "/packing",
     },
     {
       id: 4,
-      icon: <FaHotel />,  // Hotel icon
-      title: "Settings",
-      link: "/settings",
+      icon: <IconBuildingAirport className="h-6 w-6" />,
+      title: "Airports",
+      href: "/airport",
     },
   ];
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6">
-      {/* Logo */}
-      <Image 
-        src="/getTripedlogo2.webp" 
-        alt="Get Triped Logo" 
-        width={250} 
-        height={100} 
-        className="mb-6"
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Header */}
+      <Header />
+
+      {/* Main Content: Grid of Resort Cards */}
+      <main className="flex-1 container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {resorts.map((resort, index) => (
+          <HoverBorderGradient key={index} duration={1} containerClassName="w-full">
+            <TravelPackageCard packageData={resort} />
+          </HoverBorderGradient>
+        ))}
+      </main>
+
+      {/* Floating Dock Navbar (fixed at bottom) */}
+      <FloatingDock
+        items={yourItems}
+        desktopClassName="fixed bottom-0 left-0 w-full flex justify-center z-50"
+        mobileClassName="hidden"
       />
 
-      {/* Headline & CTA */}
-      <h1 className="text-5xl font-bold text-primary text-center">
-        Discover All-Inclusive Luxury
-      </h1>
-      <p className="mt-4 text-lg text-gray-400 text-center max-w-lg">
-        Experience the world's most breathtaking destinations with top-tier accommodations, gourmet dining, and unforgettable activities.
-      </p>
-
-      {/* CTA Button */}
-      <button 
-        className="mt-6 bg-primary text-black px-6 py-3 rounded-lg hover:bg-secondary transition font-semibold"
-      >
-        Explore Packages
-      </button>
-      <FloatingDock
-      items={yourItems}
-      desktopClassName="yourDesktopClassName"
-      mobileClassName="yourMobileClassName"
-    />
-    </main>
+      {/* Footer (appears on hover at the bottom) */}
+      <Footer />
+    </div>
   );
 }

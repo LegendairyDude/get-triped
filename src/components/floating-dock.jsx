@@ -3,8 +3,8 @@
  * Desktop navbar is better positioned at the bottom
  * Mobile navbar is better positioned at bottom right.
  **/
-
-import { cn } from "../../lib/utils";
+//TODO: Determine if it can be optimized and if worth it
+import { cn } from "../lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
   AnimatePresence,
@@ -136,7 +136,7 @@ function IconContainer({ mouseX, title, icon, href }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href || "#"}>
+    <Link href={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}
