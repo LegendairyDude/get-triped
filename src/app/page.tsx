@@ -2,11 +2,10 @@
 "use client";
 
 import { Header } from "@/components/Header";
-import { TravelPackageCard } from "@/components/TravelPackageCard";
-import { HoverBorderGradient } from "@/components/hover-border-gradient";
 import { FloatingDock } from "@/components/floating-dock";
 import { Footer } from "@/components/Footer";
-import { resorts } from "@/data/resorts"; // Your 12 resort objects
+import { ResortCarousel } from "@/components/ResortCarousel";
+import { resorts } from "@/data/resorts"; // Your array of resort objects
 import {
   IconMap2,
   IconBeach,
@@ -48,14 +47,11 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      {/* Main Content: Grid of Resort Cards */}
-      <main className="flex-1 container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {resorts.map((resort, index) => (
-          <HoverBorderGradient key={index} duration={1} containerClassName="w-full">
-            <TravelPackageCard packageData={resort} />
-          </HoverBorderGradient>
-        ))}
-      </main>
+      {/* "Resorts of the Day" Carousel */}
+      <section className="container mx-auto p-6">
+        <h2 className="text-2xl font-bold mb-4">Resorts of the Day</h2>
+        <ResortCarousel resorts={resorts.slice(0, 5)} />
+      </section>
 
       {/* Floating Dock Navbar (fixed at bottom) */}
       <FloatingDock
