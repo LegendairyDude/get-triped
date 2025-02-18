@@ -37,7 +37,7 @@ export default function Home() {
       id: 4,
       icon: <IconBuildingAirport className="h-6 w-6" />,
       title: "Airports",
-      href: "/airport",
+      href: "/airports",
     },
   ];
 
