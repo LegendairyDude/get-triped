@@ -1,11 +1,10 @@
-// src/app/page.jsx
 "use client";
 
 import { Header } from "@/components/Header";
 import { FloatingDock } from "@/components/floating-dock";
 import { Footer } from "@/components/Footer";
 import { ResortCarousel } from "@/components/ResortCarousel";
-import { resorts } from "@/data/resorts"; // Your array of resort objects
+import { resorts } from "@/data/resorts"; 
 import {
   IconMap2,
   IconBeach,
@@ -59,9 +58,6 @@ export default function Home() {
         desktopClassName="fixed bottom-0 left-0 w-full flex justify-center z-50"
         mobileClassName="hidden"
       />
-
-      {/* Footer (appears on hover at the bottom) */}
-      <Footer />
     </div>
   );
 }

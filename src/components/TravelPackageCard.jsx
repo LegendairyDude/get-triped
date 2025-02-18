@@ -5,7 +5,7 @@ export function TravelPackageCard({ packageData }) {
   const { title, imageUrl, description, price, rating } = packageData;
 
   return (
-    <div className="w-80 h-96 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 flex flex-col">
+    <div className="w-full h-full rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 flex flex-col">
       {/* Fixed image area */}
       <div className="relative h-48 w-full">
         <Image src={imageUrl} alt={title} fill className="object-cover" />
