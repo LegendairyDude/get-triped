@@ -3,6 +3,7 @@
 export const resorts = [
   {
     title: "Dreams Onyx Punta Cana",
+    slug: "dreams-onyx-punta-cana",
     imageUrl: "/images/dreamsOnyx/dreamsOnyxTowardsBeach.jpg",
     description:
       "Modern, luxurious, and vibrant all-inclusive resort with endless entertainment and state-of-the-art amenities.",
@@ -48,6 +49,7 @@ export const resorts = [
   },
   {
     title: "Dreams Macao Punta Cana",
+    slug: "dreams-macao-punta-cana",
     imageUrl: "/images/dreamsMacao/aerial-viewDreamMacao.jpg",
     description:
       "Experience a luxurious all-inclusive stay at Dreams Macao Punta Cana, where modern elegance meets tropical relaxation.",
@@ -116,6 +118,7 @@ export const resorts = [
   },
   {
     title: "Ocean El Faro",
+    slug: "ocean-el-faro",
     imageUrl: "/images/elBeso/frontSignNight.jpg",
     description:
       "Relax in a tropical paradise with pristine beaches, vibrant nightlife, and endless leisure activities.",
@@ -164,6 +167,7 @@ export const resorts = [
   },
   {
     title: "Grand Sirenis",
+    slug: "grand-sirenis",
     imageUrl: "/images/grandSirenis/grand-sirenis-punta-canaTowardsLobby.jpg",
     description:
       "A refined, all-inclusive resort offering exquisite dining, luxurious accommodations, and world-class amenities.",
@@ -232,6 +236,7 @@ export const resorts = [
   },
   {
     title: "Hard Rock Hotel & Casino Punta Cana",
+    slug: "hard-rock-hotel-punta-cana",
     imageUrl: "/images/hardRock/hard-rock-hotel-puntaAreial.jpg",
     description:
       "Experience the ultimate all-inclusive rock star treatment with a full-scale casino, live performances, and a signature rock & roll vibe.",
@@ -273,6 +278,7 @@ export const resorts = [
   },
   {
     title: "The Serenade",
+    slug: "the-serenade",
     imageUrl: "/images/serenade/serenadeResortView.jpg",
     description:
       "An intimate, boutique all-inclusive resort offering personalized service, exquisite dining, and a refined escape.",

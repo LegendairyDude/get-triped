@@ -5,42 +5,15 @@ import Image from "next/image";
 import { PrimaryButton } from "@/components/PrimaryButton";
 
 export function FlipTravelPackageCard({ packageData }) {
-  const {
-    title,
-    imageUrl,
-    description,
-    price,
-    rating,
-    moreInfo,
-    numPools,
-    numRooms,
-    restaurants,
-    amenities,
-  } = packageData;
+  const { title, imageUrl, description, price, rating, moreInfo } = packageData;
+  // Use a provided slug, or generate one from the title.
+  const slug = packageData.slug || title.toLowerCase().replace(/\s+/g, "-");
   const [flipped, setFlipped] = useState(false);
 
-  // Variants for the flip animation (front/back)
   const variants = {
     front: { rotateY: 0 },
     back: { rotateY: 180 },
   };
-
-  // Generate a slug from the title (simple version)
-  const slug = title.toLowerCase().replace(/\s+/g, "-");
-
-  // Format restaurant items as bullet points
-  const restaurantItems = restaurants?.map((r, i) => (
-    <li key={i} className="ml-4">
-      {r.name} ({r.theme}, {r.cuisine})
-    </li>
-  ));
-
-  // Format amenities as bullet points
-  const amenitiesItems = amenities?.map((amenity, i) => (
-    <li key={i} className="ml-4">
-      {amenity}
-    </li>
-  ));
 
   return (
     <div
@@ -63,7 +36,7 @@ export function FlipTravelPackageCard({ packageData }) {
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
               {title}
             </h2>
-            <p className="text-gray-700 dark:text-gray-700 text-sm mb-4 line-clamp-3">
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-3">
               {description}
             </p>
             <div className="mt-auto flex items-center justify-between">
@@ -93,29 +66,10 @@ export function FlipTravelPackageCard({ packageData }) {
           <h2 className="text-2xl font-semibold text-black mb-4">
             {title} Details
           </h2>
-          <div className="flex-1 overflow-y-auto p-2 shadow-inner rounded-md mb-2">
-            <ul className="list-disc text-black">
-              <li>
-                <span className="font-semibold">Pools:</span> {numPools}
-              </li>
-              <li>
-                <span className="font-semibold">Rooms:</span> {numRooms}
-              </li>
-              {restaurants && (
-                <li>
-                  <span className="font-semibold">
-                    Restaurants ({restaurants.length}):
-                  </span>
-                  <ul className="list-disc">{restaurantItems}</ul>
-                </li>
-              )}
-              {amenities && (
-                <li>
-                  <span className="font-semibold">Amenities:</span>
-                  <ul className="list-disc">{amenitiesItems}</ul>
-                </li>
-              )}
-            </ul>
+          <div className="flex-1 overflow-y-auto p-3 shadow-inner rounded-md mb-4">
+            <p className="text-black">
+              {moreInfo || "Additional details about the resort."}
+            </p>
           </div>
           <div className="mt-4 flex items-center justify-end">
             <PrimaryButton href={`/resorts/${slug}`}>
