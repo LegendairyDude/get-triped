@@ -1,24 +1,24 @@
-const colors = {
-  primary: "#FFC300", // Sunset Yellow (Main Brand Color)
-  secondary: "#FF6B81", // Coral Pink (Accent Color)
-  accent: "#E63946", // Deep Rose (Strong Highlights)
+const colours = {
+  primary: "#f5c74d", // Logo Yellow
+  secondary: "#e29680", // Logo Pink
+  light: "#fbf1cc", // Pale Yellow from Logo
+  accent: "#d94e70", // Complementary deep rose accent
 
-  black: "#000000", // Pure Black
-  dark: "#1E1E1E", // Dark Mode Background
-  light: "#F5F5F5", // Warm White
-  offBlack: "#121212", // Soft Black
-  softGray: "#C4C4C4", // Muted UI Elements
+  black: "#000000",
+  dark: "#1E1E1E",
+  offBlack: "#121212",
+  softGray: "#C4C4C4",
 
-  warning: "#FFA500", // Warning Orange
-  error: "#D32F2F", // Error Red
-  success: "#4CAF50", // Success Green
-  info: "#42A5F5", // Info Blue
+  warning: "#FFA500",
+  error: "#D32F2F",
+  success: "#4CAF50",
+  info: "#42A5F5",
 
   gradients: {
-    warmSunset: "linear-gradient(135deg, #FFB000, #E63946)",
-    goldenGlow: "linear-gradient(120deg, #FFC300, #FF6B81)",
+    warmSunset: "linear-gradient(135deg, #f5c74d, #e29680)",
+    goldenGlow: "linear-gradient(120deg, #f5c74d, #fbf1cc)",
     deepMidnight: "linear-gradient(160deg, #121212, #1E1E1E)",
   },
 };
 
-export default colors;
+export default colours;
