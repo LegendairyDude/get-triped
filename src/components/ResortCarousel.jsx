@@ -40,7 +40,7 @@ export function ResortCarousel({ resorts, speed = 20 }) {
   return (
     <div
       className={cn(
-        "relative w-full py-4 transition-all duration-300 bg-primary overflow-hidden",
+        "relative w-full py-4 transition-all duration-300 bg-secondary overflow-hidden",
         outerHovered ? "overflow-x-auto" : "overflow-hidden"
       )}
       onMouseEnter={() => setOuterHovered(true)}

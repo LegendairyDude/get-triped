@@ -28,7 +28,7 @@ const FloatingDockMobile = ({ items, className }) => {
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 bg-[#f5c74d] p-2 rounded-lg"
+            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 bg-[#e29680] p-2 rounded-lg border border-[#d94e70]"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -44,9 +44,9 @@ const FloatingDockMobile = ({ items, className }) => {
               >
                 <Link
                   href={item.href}
-                  className="h-10 w-10 rounded-full bg-white flex items-center justify-center border border-[#f5c74d]"
+                  className="h-10 w-10 rounded-full bg-[#e29680] flex items-center justify-center border border-[#d94e70]"
                 >
-                  <div className="h-4 w-4 text-[#e29680]">{item.icon}</div>
+                  <div className="h-4 w-4 text-[#d94e70]">{item.icon}</div>
                 </Link>
               </motion.div>
             ))}
@@ -55,9 +55,9 @@ const FloatingDockMobile = ({ items, className }) => {
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-white flex items-center justify-center border border-[#f5c74d]"
+        className="h-10 w-10 rounded-full bg-[#e29680] flex items-center justify-center border border-[#d94e70]"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-[#e29680]" />
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-[#d94e70]" />
       </button>
     </div>
   );
@@ -70,7 +70,7 @@ const FloatingDockDesktop = ({ items, className }) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-[#f5c74d] px-4 pb-3 border border-[#f5c74d]",
+        "mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-[#e29680] px-4 pb-3 border border-[#d94e70]",
         className
       )}
     >
@@ -124,7 +124,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-white flex items-center justify-center relative border border-[#f5c74d]"
+        className="aspect-square rounded-full bg-white flex items-center justify-center relative border border-[#d94e70]"
       >
         <AnimatePresence>
           {hovered && (
@@ -132,7 +132,7 @@ function IconContainer({ mouseX, title, icon, href }) {
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2 py-0.5 whitespace-pre rounded-md bg-white border border-[#f5c74d] text-gray-800 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
+              className="px-2 py-0.5 whitespace-pre rounded-md bg-white border border-[#d94e70] text-gray-800 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
             >
               {title}
             </motion.div>
@@ -140,7 +140,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center text-[#e29680]"
+          className="flex items-center justify-center text-[#d94e70]"
         >
           {icon}
         </motion.div>

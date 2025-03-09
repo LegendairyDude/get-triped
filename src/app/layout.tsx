@@ -1,9 +1,9 @@
-// app/layout.jsx
+
 import type { Metadata } from "next";
-import theme from "@/theme/theme"; // adjust this path as needed
+import theme from "@/theme/theme"; // Ensure your theme file exports your fonts and colours
 import "./globals.css";
 
-// Import client components for common UI elements.
+// Import common UI components
 import { Header } from "@/components/Header";
 import { FloatingDock } from "@/components/floating-dock";
 import { Footer } from "@/components/Footer";
@@ -14,7 +14,6 @@ import {
   IconBuildingAirport,
 } from "@tabler/icons-react";
 
-// Global metadata
 export const metadata: Metadata = {
   title: "Get Triped",
   description: "Your destination to find your destination",
@@ -23,7 +22,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Define the navigation items for your floating dock.
 const yourItems = [
   {
     id: 1,
@@ -54,7 +52,9 @@ const yourItems = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${theme.comfortaaFont.variable} antialiased bg-accent`}>
+      <body
+        className={`${theme.comfortaaFont.variable} antialiased bg-light text-dark`}
+      >
         <Header />
         <main className="flex-1 container mx-auto p-6">{children}</main>
         <FloatingDock

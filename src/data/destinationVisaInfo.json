@@ -1,0 +1,27 @@
+{
+  "destinations": [
+    {
+      "name": "Dominican Republic",
+      "visaRequired": false,
+      "entryDocuments": [
+        "Valid passport with at least 6 months validity",
+        "Tourist card (E-ticket recommended)"
+      ],
+      "eTicketInfo": "Complete your e-ticket online and present proof at check-in.",
+      "covidGuidelines": "Proof of vaccination or a negative COVID-19 test may be required.",
+      "notes": "Visa-free for most visitors for stays up to 90 days."
+    },
+    {
+      "name": "Costa Rica",
+      "visaRequired": false,
+      "entryDocuments": [
+        "Valid passport",
+        "Return or onward ticket"
+      ],
+      "eTicketInfo": "Costa Rica does not require an e-ticket; travel insurance is strongly recommended.",
+      "covidGuidelines": "Proof of vaccination and a negative test result are advised.",
+      "notes": "Tourists can stay visa-free for up to 90 days."
+    }
+
+  ]
+}
