@@ -15,9 +15,8 @@ export function Header() {
             className="object-contain"
           />
         </Link>
-        <h1 className="text-3xl font-bold text-dark">
-          Your destination for your destination
-        </h1>
+        <h1 className="text-3xl font-bold text-dark">Be your own agent</h1>
+        <h2>Get the trip you want; how you want</h2>
       </div>
     </header>
   );
