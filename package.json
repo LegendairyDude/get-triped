@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate-images": "node scripts/generateAllResortImagesData.js",
+    "build": "npm run generate-images && next build",
     "start": "next start",
     "lint": "next lint"
   },
