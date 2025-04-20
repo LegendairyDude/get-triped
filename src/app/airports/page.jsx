@@ -12,8 +12,6 @@ export default function AirportsPage() {
         Airports & Travel Tips
       </h1>
 
-      {/* Your overview sections go here */}
-
       <section className="mt-12">
         <h2 className="text-2xl font-semibold text-dark mb-4">
           Quick Links to Airport Guides

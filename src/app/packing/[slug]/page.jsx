@@ -8,7 +8,7 @@ import { destinations } from "@/data/destinations";
 
 export default function PackingDetailPage() {
   const { slug } = useParams();
-  // default to your “All‑Inclusive Necessities” if slug not found
+  // default to “All‑Inclusive Necessities” if slug not found
   const data = packing[slug] || { necessities: packing.default, notes: "" };
   const dest = destinations.find((d) => d.slug === slug);
 

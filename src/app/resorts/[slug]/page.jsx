@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { resorts } from "@/data/resorts";
 
-// Imported custom components
 import ResortHero from "@/components/ResortHero";
 import ResortOverview from "@/components/ResortOverview";
 import ResortAmenities from "@/components/ResortAmenities";

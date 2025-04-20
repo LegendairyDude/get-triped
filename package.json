@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "generate-images": "node scripts/generateAllResortImagesData.js",
-    "build": "npm run generate-images && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
