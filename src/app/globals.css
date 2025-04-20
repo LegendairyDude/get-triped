@@ -30,3 +30,25 @@ body {
 .backface-hidden {
   backface-visibility: hidden;
 }
+
+/* Hide everything by default in print, then show only .print-section */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .print-section,
+  .print-section * {
+    visibility: visible !important;
+  }
+  .print-section {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+  }
+  
+  /* Optional: hide print buttons themselves */
+  .no-print {
+    display: none !important;
+  }
+}

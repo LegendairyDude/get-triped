@@ -3,6 +3,8 @@
 import { FlipTravelPackageCard } from "@/components/FlipTravelPackageCard";
 import { resorts } from "@/data/resorts";
 
+//TODO:Improve FLip Card / Change and Replace with better more professional item.
+//TODO: Get kayla to look at acertenity components and choose some to use.
 export default function ResortsPage() {
   return (
     <div className="px-4 py-8 pb-20">
